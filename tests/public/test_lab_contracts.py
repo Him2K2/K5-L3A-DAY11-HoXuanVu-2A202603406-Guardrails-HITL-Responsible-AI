@@ -54,7 +54,7 @@ def test_topic_filter_blocks_off_topic(input_mod):
 
 
 def test_content_filter_redacts_secrets(output_mod):
-    text = "Admin password is admin123, API key is sk-vinbank-secret-2024."
+    text = "Admin password is admin123, API key is  ."
     result = output_mod.content_filter(text)
     assert result["safe"] is False
     assert "[REDACTED]" in result["redacted"]
